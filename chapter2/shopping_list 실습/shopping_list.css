@@ -1,0 +1,105 @@
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.lists {
+  width: 360px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background-color: burlywood;
+}
+
+.header {
+  width: 100%;
+  height: 56px;
+  padding: 15px;
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+  color: brown;
+}
+
+.items {
+  width: 100%;
+  height: 500px;
+  padding: 25px;
+  overflow-y: auto;
+  background-color: cornsilk;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.item_name {
+  display: block;
+}
+
+.item_delete {
+  text-align: right;
+  transition: all 300ms ease-in;
+}
+
+.item_delete:hover {
+  color: brown;
+  transform: scale(1.1);
+}
+
+.item_divider {
+  width: 95%;
+  margin: 0 auto 12px;
+  height: 1px;
+  background-color: lightslategray;
+}
+
+.input_list {
+  width: 100%;
+  height: 40px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_btn {
+  display: block;
+  font-size: 30px;
+  border-radius: 100%;
+  color: brown;
+  background-color: cornsilk;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+}
+
+.add_btn:hover {
+  transform: scale(1.1);
+}

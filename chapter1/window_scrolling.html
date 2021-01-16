@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    .box {
+      width: 250px;
+      height: 250px;
+      background-color: cornsilk;
+      margin: 15px;
+    }
+    .special {
+      background-color: salmon;
+    }
+    .btn_wrap {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      text-align: right;
+    }
+    button {
+      margin: 0 0 0 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box special"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <aside class="btn_wrap">
+    <button class="scroll_by">Scroll by 100px(y)</button>
+    <button class="scroll_to">Scroll to 100px(y)</button>
+    <button class="scroll_into_special">Scroll into special</button>
+  </aside>
+</body>
+
+<script>
+  const specialBox = document.querySelector('.special');
+  const scrollByBtn = document.querySelector('.scroll_by');
+  const scrollToBtn = document.querySelector('.scroll_to');
+  const scrollIntoSpecialBtn = document.querySelector('.scroll_into_special');
+
+  scrollByBtn.addEventListener('click', e => {
+    // window.scrollBy(0, 100);
+    window.scrollBy({top: 100, left:0, behavior: 'smooth'});
+  });
+  scrollToBtn.addEventListener('click', e => {
+    window.scrollTo(0, 100);
+  });
+  scrollIntoSpecialBtn.addEventListener('click', e => {
+    // window.scrollTo(0, specialBox.getBoundingClientRect().y);
+    // specialBox.scrollIntoView(); //바로 top으로 이동
+    specialBox.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Size</title>
+  <style>
+    #div {
+      display: inline-block;
+      background-color: thistle;
+      padding: 16px;
+      margin-top: 16px;
+      font-size: 48px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="div"> Window Size
+    <h2 id="screen"></h2>
+    <h2 id="outer"></h2>
+    <h2 id="inner"></h2>
+    <h2 id="client"></h2>
+  </div>
+
+  <script>
+    const div = document.getElementById('div');
+    function updateTag() {
+      div.innerHTML = `window.screen: ${window.screen.width}, ${window.screen.height} <br/>
+      window.outer: ${window.outerWidth}, ${window.outerHeight} <br/>
+      window.inner: ${window.innerWidth}, ${window.innerHeight} <br/>
+      documentElement.client: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}`;
+    }
+
+    window.addEventListener('resize', () => {
+      updateTag();
+    });
+
+    updateTag();
+    
+
+
+
+  </script>
+  
+</body>
+</html>

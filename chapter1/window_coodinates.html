@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    .box {
+      width: 250px;
+      height: 250px;
+      background-color: cornsilk;
+      margin: 15px;
+    }
+    .special {
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box special"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</body>
+
+<script>
+  const specialBox = document.querySelector('.special');
+
+  specialBox.addEventListener('click', e => {
+    const rect = specialBox.getBoundingClientRect();
+    console.log(rect);
+    // console.log(e);
+    console.log(`clientX: ${e.clientX}, Y: ${e.clientY}`);
+    console.log(`pageX: ${e.pageX}, Y:${e.pageY}`);
+  });
+</script>
+</html>
