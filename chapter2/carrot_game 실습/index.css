@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.game {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  background-image: url(img/background.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.interface {
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.play_btn {
+  width: 80px;
+  height: 80px;
+  border: 5px solid black;
+  background-color: wheat;
+  border-radius: 20px;
+  color: black;
+  font-size: 36px;
+}
+
+.timer {
+  width: 250px;
+  height: 80px;
+  margin: 30px auto;
+  padding: 10px 0;
+  border: 5px solid black;
+  border-radius: 20px;
+  background-color: cornsilk;
+  color: black;
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: 500;
+}
+
+.counter {
+  width: 80px;
+  height: 80px;
+  border: 5px solid black;
+  border-radius: 40px;
+  background-color: palevioletred;
+  color: whitesmoke;
+  font-size: 40px;
+  line-height: 80px;
+  font-weight: 500;
+}
+
+.field {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  bottom: 0; left: 0;
+}
+
+.item {
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.carrot {
+  transform: translate(100px, 200px);
+}
+
+.bug {
+  transform: translate(600px, 200px);
+}

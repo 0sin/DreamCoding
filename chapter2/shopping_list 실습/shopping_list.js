@@ -29,33 +29,47 @@ function onAddList() {
 }
 
 
+let id = 0; //UUID
 function createItem(text) {
+  
   const itemRow = document.createElement('li');
   itemRow.setAttribute('class', 'item_row');
+  itemRow.setAttribute('data-id', id);
 
-  const item = document.createElement('div');
-  item.setAttribute('class', 'item');
+  itemRow.innerHTML = `
+  <div class="item">
+    <span class="item_name">${text}</span>
+    <button class="item_delete">
+      <i class="far fa-trash-alt" data-id=${id}></i>
+    </button>
+  </div>
+  <div class="item_divider"></div>`;
 
-  const itemName = document.createElement('span');
-  itemName.setAttribute('class', 'item_name');
-  itemName.textContent = text;
+  id++;
 
-  const itemDelete = document.createElement('button');
-  itemDelete.setAttribute('class', 'item_delete');
-  itemDelete.innerHTML = `<i class="far fa-trash-alt"></i>`;
-  itemDelete.addEventListener('click', () => {
-    items.removeChild(itemRow);
-  })
+  // const item = document.createElement('div');
+  // item.setAttribute('class', 'item');
 
-  const itemDivider = document.createElement('div');
-  itemDivider.setAttribute('class', 'item_divider');
+  // const itemName = document.createElement('span');
+  // itemName.setAttribute('class', 'item_name');
+  // itemName.textContent = text;
 
-  item.appendChild(itemName);
-  item.appendChild(itemDelete);
+  // const itemDelete = document.createElement('button');
+  // itemDelete.setAttribute('class', 'item_delete');
+  // itemDelete.innerHTML = `<i class="far fa-trash-alt"></i>`;
+  // itemDelete.addEventListener('click', () => {
+  //   items.removeChild(itemRow);
+  // })
 
-  itemRow.appendChild(item);
-  itemRow.appendChild(itemDivider);
+  // const itemDivider = document.createElement('div');
+  // itemDivider.setAttribute('class', 'item_divider');
 
+  // item.appendChild(itemName);
+  // item.appendChild(itemDelete);
+
+  // itemRow.appendChild(item);
+  // itemRow.appendChild(itemDivider);
+  
   return itemRow; 
 }
 
@@ -64,5 +78,14 @@ addBtn.addEventListener('click', onAddList);
 inputList.addEventListener('keypress', e => {
   if(e.key === 'Enter') {
     onAddList();
+  }
+})
+
+// 이벤트 위임 Delegation
+items.addEventListener('click', event => {
+  const id = event.target.dataset.id;
+  if (id) {
+    const toBeDeleted = document.querySelector(`.item_row[data-id="${id}"]`);
+    toBeDeleted.remove();
   }
 })
