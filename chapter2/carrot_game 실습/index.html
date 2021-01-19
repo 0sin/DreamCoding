@@ -14,22 +14,37 @@
   <div class="interface">
     <button class="play_btn">
       <i class="fas fa-play"></i>
-      <!-- <i class="fas fa-stop"></i> -->
-      <!-- <i class="fas fa-reply"></i> -->
+      <i class="fas fa-stop" style="display: none;"></i>
     </button>
-    <div class="timer">00:00</div>
+    <div class="timer">00:10</div>
     <div class="counter">0</div>
   </div>
 
   <div class="field">
-    <img src="img/carrot.png" alt="carrot" class="item carrot">
-    <img src="img/bug.png" alt="bug" class="item bug">
+    <!-- <img src="img/carrot.png" alt="carrot" class="item carrot">
+    <img src="img/bug.png" alt="bug" class="item bug"> -->
   </div>
 
-  <div class="win"></div>
-  <div class="lose">
-    <i class="fas fa-redo"></i>
+  <div class="alert win">
+    <button class="play_btn">
+      <i class="fas fa-redo"></i>
+    </button>
+    <h2>🎉You Win🎉</h2>
   </div>
+  <div class="alert lose">
+    <button class="play_btn">
+      <i class="fas fa-redo"></i>
+    </button>
+    <h2>💩You Lose💩</h2>
+  </div>
+
+  <figure>
+    <audio class="bg_sound" src="sound/bg.mp3"></audio>
+    <audio class="bug_sound" src="sound/bug_pull.mp3"></audio>
+    <audio class="carrot_sound" src="sound/carrot_pull.mp3"></audio>
+    <audio class="win_sound" src="sound/game_win.mp3"></audio>
+    <audio class="lose_sound" src="sound/alert.wav"></audio>
+  </figure>
   
 
 </section>
